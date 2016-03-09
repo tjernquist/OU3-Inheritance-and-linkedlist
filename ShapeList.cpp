@@ -10,15 +10,11 @@ void ShapeList::add(const Shape& s) {
 }
 
 
-//Copy-constructor for the ShapeList
-ShapeList::ShapeList(const ShapeList &shapes) {
-     copy(shapes.listStart, listStart);
-}
+
 
 //Support-function that copies each node from the source-list to the destination-list
 void copy(Node* src, Node*& dest)
 {
-    
  //The first element is handled separetely
  if (!src) {
    return; //If list is empty, return.
@@ -35,6 +31,11 @@ void copy(Node* src, Node*& dest)
    src = src->getNextNode();
    p = p->getNextNode();
  }
+}
+
+//Copy-constructor for the ShapeList
+ShapeList::ShapeList(const ShapeList &shapes) {
+     copy(shapes.listStart, listStart);
 }
 
 //Destruction-function for ShapeList
